@@ -175,6 +175,7 @@
             <button id="prefDetailClose" class="text-2xl leading-none px-2" style="color:var(--ink-soft);" aria-label="關閉">&times;</button>
           </div>
           <p id="prefDetailVisits" class="text-base mt-1" style="color:var(--ink-soft);"></p>
+          <div id="prefDetailCities" class="flex flex-wrap gap-1.5 mt-3"></div>
           <div id="prefDetailTrips" class="flex flex-wrap gap-2 mt-3"></div>
         </div>
       </div>
@@ -191,31 +192,21 @@
 
   <!-- ===================== 旅行紀錄 ===================== -->
   <section id="tab-records" class="tab-panel pt-6 hidden">
-    <div class="card-surface rounded-2xl p-4 mb-6 flex items-start gap-3">
-      <i class="fa-solid fa-circle-info text-lg mt-0.5" style="color:var(--terracotta-dark);"></i>
-      <p class="text-sm lg:text-base" style="color:var(--ink-soft);">
-        以下為示範用的範例行程，方便你參考欄位格式。請打開網頁原始碼，找到 <code class="px-1 rounded" style="background:var(--cream-2);">tripRecords</code> 陣列，依照相同格式修改或新增你自己的真實旅行紀錄。
-      </p>
-    </div>
+    <!-- 以下為示範用的範例行程，方便你參考欄位格式。
+         請找到下方 <script> 區塊中的 tripRecords 陣列，依照相同格式修改或新增你自己的真實旅行紀錄。 -->
     <div id="timelineWrap" class="relative"></div>
   </section>
 
   <!-- ===================== 未來計劃 ===================== -->
   <section id="tab-plans" class="tab-panel pt-6 hidden">
-    <div class="card-surface rounded-2xl p-4 mb-6 flex items-start gap-3">
-      <i class="fa-solid fa-circle-info text-lg mt-0.5" style="color:var(--terracotta-dark);"></i>
-      <p class="text-sm lg:text-base" style="color:var(--ink-soft);">
-        這裡記錄還在規劃中、尚未成行的日本旅遊構想。請打開網頁原始碼，找到 <code class="px-1 rounded" style="background:var(--cream-2);">futurePlans</code> 陣列新增你的計劃。
-      </p>
-    </div>
+    <!-- 這裡記錄還在規劃中、尚未成行的日本旅遊構想。
+         請找到下方 <script> 區塊中的 futurePlans 陣列新增你的計劃。 -->
     <div id="plansWrap" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
   </section>
 
 </main>
 
-<footer class="text-center text-sm py-8" style="color:var(--ink-soft);">
-  日本旅行紀錄 · 靜態單頁網站，資料儲存於程式碼中
-</footer>
+<!-- 日本旅行紀錄 · 靜態單頁網站，資料儲存於程式碼中 -->
 
 <script>
 /* =========================================================
@@ -236,11 +227,15 @@ const REGION_ORDER = ["北海道","東北","關東","中部","近畿","中國","
    - title       行程標題
    - startDate / endDate  出發/回程日期 (YYYY-MM-DD)
    - prefectures 這次旅行去過的縣市（使用英文代碼，對應 PREFECTURES 物件的 key，例如 'Osaka','Kyoto'）
+   - cities      這次旅行在各縣市實際去過的城市/景點文字（地圖仍只細分到縣，這裡用文字記錄更細的地點）
+                 格式：{ 縣市英文代碼: [城市或景點名稱, ...] }，例如 { Osaka: ["大阪市"], Kyoto: ["京都市","嵐山"] }
    - agency      旅行社名稱
    - price       每人團費（數字，不含逗號）
    - itinerary   每日行程，陣列，每一項是 { day: 第幾天, title: 該天標題, spots: [景點1,景點2,...] }
+                 spots 若與標題重複可省略不填，或設為空陣列 []
    - flights     飛機資訊 { departure: {...}, return: {...} }，airport 為出發機場：'桃園國際機場' 或 '高雄國際機場'
    - hotels      飯店資訊陣列，每一筆 { name, checkIn, checkOut, address }
+                 checkIn/checkOut 會自動比對每日行程日期，在當晚住宿的那一天下方顯示飯店標籤（可點擊開啟Google Map）
    - notes       備註
    ========================================================= */
 const tripRecords = [
@@ -248,33 +243,36 @@ const tripRecords = [
     title: "經典名古屋．黑部立山5日",
     startDate: "2025-04-25",
     endDate: "2025-04-29",
-    prefectures: ["Aichi"],
+    prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
+    cities: { Aichi: ["名古屋市"], Gifu: ["大野郡", "高山市"], Ishikawa:["金澤市"], Toyama:["新川郡"], Nagano:["大町市", "松本市",], Mie:["桑名市"] },
     agency: "喜鴻假期",
     price: 51762,
     itinerary: [
-      { day: 1, title: "桃園 / 中部機場 / 名古屋", spots: ["名古屋市區"] },
-      { day: 2, title: "合掌村 / 金澤兼六園", spots: ["旭山動物園", "富田農場", "富良野起司工房"] },
+      { day: 1, title: "桃園 / 名古屋中部國際機場 / 名古屋市區", spots: [] },
+      { day: 2, title: "合掌村 / 金澤兼六園 ★贈送金箔冰淇淋", spots: [] },
       { day: 3, title: "黑部立山體驗六種交通方式", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
-      { day: 4, title: "上高地 / 高山老街 / 免稅店 / 名古屋市區", spots: ["上高地", "高山老街", "名古屋市區"] },
-      { day: 5, title: "名古屋城 / 三井OUTLET / 名古屋市區 / 中部機場 / 桃園", spots: ["名古屋城", "三井OUTLET爵士之夢長島", "名古屋市區"] }
+      { day: 4, title: "上高地 / 高山老街 ★贈送飛驒牛肉串 / 光伸免稅店 / 名古屋市區", spots: [] },
+      { day: 5, title: "名古屋城 / 三井OUTLET / 名古屋市區 / 名古屋中部國際機場 / 桃園", spots: [] }
     ],
     flights: {
       departure: { airline: "星宇航空", flightNo: "JX838", airport: "桃園國際機場", date: "2025-04-25", time: "14:55", arriveTime: "18:45" },
-      return:    { airline: "星宇航空", flightNo: "JX839", airport: "中部機場", date: "2025-04-29", time: "19:55", arriveTime: "22:00" }
+      return:    { airline: "星宇航空", flightNo: "JX839", airport: "名古屋中部國際機場", date: "2025-04-29", time: "19:55", arriveTime: "22:00" }
     },
     hotels: [
-      { name: "名古屋榮", checkIn: "2025-04-25", checkOut: "2025-04-26", address: "北海道札幌市中央區北1西4" },
-      { name: "美瑛之丘溫泉飯店", checkIn: "2025-04-26", checkOut: "2025-04-27", address: "北海道上川郡美瑛町" },
-      { name: "四季之鄉", checkIn: "2025-04-27", checkOut: "2025-04-28", address: "北海道上川郡美瑛町" },
-      { name: "名古屋萬怡酒店", checkIn: "2025-04-28", checkOut: "2025-04-29", address: "北海道登別市登別溫泉町" }
+      { name: "名古屋榮最佳西方Plus酒店Best Western Hotel Nagoya sakae", checkIn: "2025-04-25", checkOut: "2025-04-26", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
+      { name: "金澤 The Square HotelKanazawa The Square Hotel", checkIn: "2025-04-26", checkOut: "2025-04-27", address: "石川県金沢市下堤町10" },
+      { name: "四季之鄉 HOLIDAY YOUAzumino Chogatake Onsen Holiday You", checkIn: "2025-04-27", checkOut: "2025-04-28", address: "長野県安曇野市堀金烏川11－1" },
+      { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2025-04-28", checkOut: "2025-04-29", address: "愛知県名古屋市中区栄1丁目17-6" }
     ],
-    notes: "賞櫻花期比預期晚，第2天在旭川附近才看到盛開的櫻花，建議下次安排4月底至5月初。"
+    notes: "終於看到雪壁!"
   },
+
   {
     title: "關西賞楓五日遊",
     startDate: "2025-11-18",
     endDate: "2025-11-22",
-    prefectures: ["Osaka", "Kyoto"],
+    prefectures: ["Osaka", "Kyoto", "Nara"],
+    cities: { Osaka: ["大阪市"], Kyoto: ["京都市", "嵐山"], Nara: ["奈良市"] },
     agency: "可樂旅遊",
     price: 45900,
     itinerary: [
@@ -309,8 +307,8 @@ const tripRecords = [
 const futurePlans = [
   {
     year: 2027,
-    area: "東北（青森、秋田）",
-    month: "10月上旬（賞楓季）",
+    area: "四國（廣島，小豆島，金刀比羅宮）",
+    month: "3月上旬",
     tours: [
       { agency: "雄獅旅行社", url: "https://www.liontravel.com" },
       { agency: "可樂旅遊", url: "https://www.colatour.com.tw" }
@@ -410,6 +408,21 @@ function selectPrefecture(code){
   const n = visitCounts[code]||0;
   document.getElementById('prefDetailVisits').textContent = n ? `已去過 ${n} 次` : '尚未去過';
 
+  const citiesWrap = document.getElementById('prefDetailCities');
+  citiesWrap.innerHTML = '';
+  const citySet = new Set();
+  tripsForPrefecture(code).forEach(trip=>{
+    (trip.cities && trip.cities[code] ? trip.cities[code] : []).forEach(c=>citySet.add(c));
+  });
+  citySet.forEach(city=>{
+    const span = document.createElement('span');
+    span.className = 'text-xs px-2.5 py-1 rounded-full';
+    span.style.background = 'var(--cream-2)';
+    span.style.color = 'var(--ink-soft)';
+    span.textContent = city;
+    citiesWrap.appendChild(span);
+  });
+
   const tripsWrap = document.getElementById('prefDetailTrips');
   tripsWrap.innerHTML = '';
   tripsForPrefecture(code).forEach((trip, idx)=>{
@@ -505,9 +518,16 @@ document.getElementById('btnViewList').addEventListener('click', ()=>switchMapVi
 
 /* ---------- 旅行紀錄 時間軸 ---------- */
 function addDays(dateStr, n){
-  const d = new Date(dateStr + 'T00:00:00');
-  d.setDate(d.getDate() + n);
-  return d.toISOString().slice(0,10);
+  const [y,m,day] = dateStr.split('-').map(Number);
+  const utcMs = Date.UTC(y, m-1, day) + n*86400000;
+  const dt = new Date(utcMs);
+  const yy = dt.getUTCFullYear();
+  const mm = String(dt.getUTCMonth()+1).padStart(2,'0');
+  const dd = String(dt.getUTCDate()).padStart(2,'0');
+  return `${yy}-${mm}-${dd}`;
+}
+function googleMapsUrl(name, address){
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + address)}`;
 }
 function hotelForDate(trip, dateStr){
   return trip.hotels.find(h => dateStr >= h.checkIn && dateStr < h.checkOut);
@@ -547,13 +567,14 @@ function buildTimeline(){
           ${trip.itinerary.map(d=>{
             const dateStr = addDays(trip.startDate, d.day - 1);
             const hotel = hotelForDate(trip, dateStr);
+            const hasSpots = d.spots && d.spots.length > 0;
             return `
             <div class="flex gap-3 text-sm">
               <span class="shrink-0 font-medium px-2 py-0.5 rounded" style="background:var(--terracotta-dark); color:#fff; height:fit-content;">Day ${d.day}</span>
               <div>
                 <p class="font-medium">${d.title}</p>
-                <p style="color:var(--ink-soft);">${d.spots.join('、')}</p>
-                ${hotel ? `<span class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full mt-1" style="background:var(--cream); color:var(--ink-soft);"><i class="fa-solid fa-bed" style="color:var(--terracotta-dark);"></i>住宿：${hotel.name}</span>` : ''}
+                ${hasSpots ? `<p style="color:var(--ink-soft);">${d.spots.join('、')}</p>` : ''}
+                ${hotel ? `<a href="${googleMapsUrl(hotel.name, hotel.address)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full mt-1" style="background:var(--cream); color:var(--ink-soft);"><i class="fa-solid fa-bed" style="color:var(--terracotta-dark);"></i>住宿：${hotel.name}<i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--terracotta-dark); font-size:10px;"></i></a>` : ''}
               </div>
             </div>`;
           }).join('')}
