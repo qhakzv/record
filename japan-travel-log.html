@@ -596,7 +596,7 @@ function buildTimeline(){
     const prefTags = trip.prefectures.map(c=>`<span class="tag-pill text-xs px-2.5 py-1 rounded-full">${PREFECTURES[c].name}</span>`).join('');
 
     const cardHTML = `
-      <div class="card-surface rounded-2xl p-5 cursor-pointer text-left w-full lg:max-w-md" data-toggle>
+      <div class="card-surface rounded-2xl p-5 cursor-pointer text-left w-full lg:max-w-[500px]" data-toggle>
         <div class="flex items-start justify-between gap-3">
           <div>
             <p class="text-sm" style="color:var(--ink-soft);">${formatDate(trip.startDate)} － ${formatDate(trip.endDate)}（共 ${days} 天）</p>
