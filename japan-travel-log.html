@@ -240,7 +240,7 @@ const REGION_ORDER = ["北海道","東北","關東","中部","近畿","中國","
    ========================================================= */
 const tripRecords = [
   {
-    title: "經典名古屋．黑部立山5日",
+    title: "【經典名古屋．黑部立山５日】名古屋萬怡、白川鄉合掌村、金澤兼六園、上高地",
     startDate: "2025-04-25",
     endDate: "2025-04-29",
     prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
@@ -264,33 +264,35 @@ const tripRecords = [
       { name: "四季之鄉 HOLIDAY YOUAzumino Chogatake Onsen Holiday You", checkIn: "2025-04-27", checkOut: "2025-04-28", address: "長野県安曇野市堀金烏川11－1" },
       { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2025-04-28", checkOut: "2025-04-29", address: "愛知県名古屋市中区栄1丁目17-6" }
     ],
-    notes: "終於看到雪壁!"
+    notes: "團編:TOM05JX250425QS；終於看到雪壁!"
   },
 
   {
-    title: "關西賞楓五日遊",
-    startDate: "2025-11-18",
-    endDate: "2025-11-22",
-    prefectures: ["Osaka", "Kyoto", "Nara"],
-    cities: { Osaka: ["大阪市"], Kyoto: ["京都市", "嵐山"], Nara: ["奈良市"] },
-    agency: "可樂旅遊",
+    title: "省最大九州｜由布院之森列車．自然野生動物園叢林巴士．湯布院金鱗湖．和牛吃到飽．保證入住和藏溫泉．五日【高雄直飛】",
+    startDate: "2026-03-05",
+    endDate: "2026-03-09",
+    prefectures: ["Fukuoka", "Oita", "Kumamoto", "Saga"],
+    cities: { Fukuoka: ["福岡市", "太宰府市"], Oita: ["由布市", "日田市", "速見郡","宇佐市"], Kumamoto: ["阿蘇郡", "熊本市"], Saga:["鳥栖市"] },
+    agency: "雄獅旅遊",
     price: 45900,
     itinerary: [
-      { day: 1, title: "高雄 / 關西機場 / 大阪市區", spots: ["道頓堀", "心齋橋", "固力果跑跑人看板"] },
-      { day: 2, title: "京都嵐山賞楓", spots: ["嵐山竹林小徑", "渡月橋", "天龍寺"] },
-      { day: 3, title: "京都東山文化路線", spots: ["清水寺", "二年坂三年坂", "祇園花見小路"] },
-      { day: 4, title: "奈良一日遊", spots: ["奈良公園（餵鹿）", "東大寺", "春日大社"] },
-      { day: 5, title: "大阪城公園 / 關西機場 / 高雄", spots: ["大阪城天守閣", "機場伴手禮採買"] }
+      { day: 1, title: "高雄 / 福岡空港 / 福岡", spots: [] },
+      { day: 2, title: "由布院、金鱗湖★加贈B-SPEAK蛋糕 / 日田啤酒廠見學 / ★搭乘特急由布院之森列車", spots: [] },
+      { day: 3, title: "九州自然野生動物園(特別安排搭乘叢林巴士) / 黑川溫泉街散策 / 阿蘇大觀峰展望台 / 草千里之濱★加贈冰淇淋", spots: [] },
+      { day: 4, title: "熊本城 天守閣 / 櫻之馬場 城彩苑 / 免稅店 / LaLaPort福岡購物中心", spots: [] },
+      { day: 5, title: "櫛田神社 / 太宰府天滿宮★加贈梅枝餅 / 鳥栖PREMIUM OUTLET / 福岡空港 / 高雄", spots: [] }
     ],
     flights: {
-      departure: { airline: "星宇航空", flightNo: "JX820", airport: "高雄國際機場", date: "2025-11-18", time: "07:50", arriveTime: "11:20" },
-      return:    { airline: "星宇航空", flightNo: "JX821", airport: "關西國際機場", date: "2025-11-22", time: "12:30", arriveTime: "14:10" }
+      departure: { airline: "長榮航空", flightNo: "BR120", airport: "高雄國際機場", date: "2026-03-05", time: "15:30", arriveTime: "18:55" },
+      return:    { airline: "長榮航空", flightNo: "BR119", airport: "福岡國際機場", date: "2026-03-09", time: "20:00", arriveTime: "22:00" }
     },
     hotels: [
-      { name: "大阪難波東急REI飯店", checkIn: "2025-11-18", checkOut: "2025-11-20", address: "大阪府大阪市中央區難波" },
-      { name: "京都四條烏丸格拉斯麗飯店", checkIn: "2025-11-20", checkOut: "2025-11-22", address: "京都府京都市下京區四條烏丸" }
+      { name: "福岡東映飯店 FUKUOKA TOEI HOTEL", checkIn: "2026-03-05", checkOut: "2026-03-06", address: "福岡県福岡市中央区高砂1-1-23" },
+      { name: "別府灣和藏飯店 GRANDVRIO HOTEL BEPPUWAN WAKURA", checkIn: "2026-03-06", checkOut: "2026-03-07", address: "大分県速見郡日出町大字平道1780-1" },
+      { name: "阿蘇渡假飯店 ASO RESORT GRANDVRIO HOTEL - ROUTE-INN HOTELS -", checkIn: "2026-03-07", checkOut: "2026-03-08", address: "熊本県阿蘇市赤水米塚温泉" },
+      { name: "福岡西鐵INN飯店 NISHITETSU INN FUKUOKA", checkIn: "2026-03-08", checkOut: "2026-03-09", address: "福岡県福岡市中央区天神1-16-1" }      
     ],
-    notes: "楓葉最佳觀賞期約11月中下旬，嵐山人潮眾多建議一早前往。"
+    notes: "團編：26JF305BRK ；無止盡的爬坡"
   }
 ];
 
@@ -313,7 +315,7 @@ const futurePlans = [
       { agency: "雄獅旅行社", url: "https://www.liontravel.com" },
       { agency: "可樂旅遊", url: "https://www.colatour.com.tw" }
     ],
-    notes: "想去角館武家屋敷賞楓，還在比較各家行程天數與價格，預算抓每人6萬以內。"
+    notes: ""
   }
 ];
 
