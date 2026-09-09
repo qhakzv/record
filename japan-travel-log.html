@@ -241,6 +241,60 @@ const REGION_ORDER = ["北海道","東北","關東","中部","近畿","中國","
 const tripRecords = [
   {
     title: "【經典名古屋．黑部立山５日】名古屋萬怡、白川鄉合掌村、金澤兼六園、上高地",
+    startDate: "2023-04-25",
+    endDate: "2023-04-29",
+    prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
+    cities: { Aichi: ["名古屋市"], Gifu: ["大野郡", "高山市"], Ishikawa:["金澤市"], Toyama:["新川郡"], Nagano:["大町市", "松本市",], Mie:["桑名市"] },
+    agency: "喜鴻假期",
+    price: 51762,
+    itinerary: [
+      { day: 1, title: "桃園 / 中部國際機場 / 名古屋市區", spots: [] },
+      { day: 2, title: "白川鄉合掌村 / 金澤兼六園 ★贈送金箔冰淇淋", spots: [] },
+      { day: 3, title: "黑部立山體驗六種交通方式", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
+      { day: 4, title: "上高地 / 高山老街 ★贈送飛驒牛肉串 / 光伸免稅店 / 名古屋市區", spots: [] },
+      { day: 5, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 中部國際機場 / 桃園", spots: [] }
+    ],
+    flights: {
+      departure: { airline: "星宇航空", flightNo: "JX838", airport: "桃園國際機場", date: "2025-04-25", time: "14:55", arriveTime: "18:45" },
+      return:    { airline: "星宇航空", flightNo: "JX839", airport: "名古屋中部國際機場", date: "2025-04-29", time: "19:55", arriveTime: "22:00" }
+    },
+    hotels: [
+      { name: "名古屋榮最佳西方Plus酒店Best Western Hotel Nagoya sakae", checkIn: "2025-04-25", checkOut: "2025-04-26", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
+      { name: "金澤 The Square HotelKanazawa The Square Hotel", checkIn: "2025-04-26", checkOut: "2025-04-27", address: "石川県金沢市下堤町10" },
+      { name: "四季之鄉 HOLIDAY YOUAzumino Chogatake Onsen Holiday You", checkIn: "2025-04-27", checkOut: "2025-04-28", address: "長野県安曇野市堀金烏川11－1" },
+      { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2025-04-28", checkOut: "2025-04-29", address: "愛知県名古屋市中区栄1丁目17-6" }
+    ],
+    notes: "團編:TOM05JX250425QS；終於看到雪壁!"
+  },
+  {
+    title: "【經典名古屋．黑部立山５日】名古屋萬怡、白川鄉合掌村、金澤兼六園、上高地",
+    startDate: "2024-04-25",
+    endDate: "2024-04-29",
+    prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
+    cities: { Aichi: ["名古屋市"], Gifu: ["大野郡", "高山市"], Ishikawa:["金澤市"], Toyama:["新川郡"], Nagano:["大町市", "松本市",], Mie:["桑名市"] },
+    agency: "喜鴻假期",
+    price: 51762,
+    itinerary: [
+      { day: 1, title: "桃園 / 中部國際機場 / 名古屋市區", spots: [] },
+      { day: 2, title: "白川鄉合掌村 / 金澤兼六園 ★贈送金箔冰淇淋", spots: [] },
+      { day: 3, title: "黑部立山體驗六種交通方式", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
+      { day: 4, title: "上高地 / 高山老街 ★贈送飛驒牛肉串 / 光伸免稅店 / 名古屋市區", spots: [] },
+      { day: 5, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 中部國際機場 / 桃園", spots: [] }
+    ],
+    flights: {
+      departure: { airline: "星宇航空", flightNo: "JX838", airport: "桃園國際機場", date: "2025-04-25", time: "14:55", arriveTime: "18:45" },
+      return:    { airline: "星宇航空", flightNo: "JX839", airport: "名古屋中部國際機場", date: "2025-04-29", time: "19:55", arriveTime: "22:00" }
+    },
+    hotels: [
+      { name: "名古屋榮最佳西方Plus酒店Best Western Hotel Nagoya sakae", checkIn: "2025-04-25", checkOut: "2025-04-26", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
+      { name: "金澤 The Square HotelKanazawa The Square Hotel", checkIn: "2025-04-26", checkOut: "2025-04-27", address: "石川県金沢市下堤町10" },
+      { name: "四季之鄉 HOLIDAY YOUAzumino Chogatake Onsen Holiday You", checkIn: "2025-04-27", checkOut: "2025-04-28", address: "長野県安曇野市堀金烏川11－1" },
+      { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2025-04-28", checkOut: "2025-04-29", address: "愛知県名古屋市中区栄1丁目17-6" }
+    ],
+    notes: "團編:TOM05JX250425QS；終於看到雪壁!"
+  },
+  {
+    title: "【經典名古屋．黑部立山５日】名古屋萬怡、白川鄉合掌村、金澤兼六園、上高地",
     startDate: "2025-04-25",
     endDate: "2025-04-29",
     prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
@@ -293,6 +347,36 @@ const tripRecords = [
       { name: "福岡西鐵INN飯店 NISHITETSU INN FUKUOKA", checkIn: "2026-03-08", checkOut: "2026-03-09", address: "福岡県福岡市中央区天神1-16-1" }      
     ],
     notes: "團編：26JF305BRK ；無止盡的爬坡"
+  },
+  
+  {
+    title: "第二人折3千｜高松四國廣島岡山｜嚴島神社.金刀比羅宮.DIY烏龍麵.千光寺公園.採果樂.岡山後樂園.倉敷美觀六日｜高雄",
+    startDate: "2027-03-15",
+    endDate: "2027-03-20",
+    prefectures: ["Aichi","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
+    cities: { Aichi: ["名古屋市"], Gifu: ["大野郡", "高山市"], Ishikawa:["金澤市"], Toyama:["新川郡"], Nagano:["大町市", "松本市",], Mie:["桑名市"] },
+    agency: "雄獅旅遊",
+    price: 39400,
+    itinerary: [
+      { day: 1, title: "高雄 / 中部國際機場 / 名古屋市區", spots: [] },
+      { day: 2, title: "白川鄉合掌村 / 金澤兼六園 ★贈送金箔冰淇淋", spots: [] },
+      { day: 3, title: "黑部立山體驗六種交通方式", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
+      { day: 4, title: "上高地 / 高山老街 ★贈送飛驒牛肉串 / 光伸免稅店 / 名古屋市區", spots: [] },
+      { day: 5, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 中部國際機場 / 桃園", spots: [] },
+      { day: 6, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 中部國際機場 / 桃園", spots: [] }
+    ],
+    flights: {
+      departure: { airline: "中華航空", flightNo: "JX838", airport: "高雄國際機場", date: "2027-03-15", time: "14:55", arriveTime: "18:45" },
+      return:    { airline: "中華航空", flightNo: "JX839", airport: "名古屋中部國際機場", date: "2027-03-20", time: "19:55", arriveTime: "22:00" }
+    },
+    hotels: [
+      { name: "名古屋榮最佳西方Plus酒店Best Western Hotel Nagoya sakae", checkIn: "2027-03-15", checkOut: "2027-03-16", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
+      { name: "金澤 The Square HotelKanazawa The Square Hotel", checkIn: "2027-03-16", checkOut: "2027-03-17", address: "石川県金沢市下堤町10" },
+      { name: "四季之鄉 HOLIDAY YOUAzumino Chogatake Onsen Holiday You", checkIn: "2027-03-17", checkOut: "2027-03-18", address: "長野県安曇野市堀金烏川11－1" },
+      { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2027-03-18", checkOut: "2027-03-19", address: "愛知県名古屋市中区栄1丁目17-6" },
+      { name: "Courtyard Nagoya 名古屋萬怡酒店", checkIn: "2027-03-19", checkOut: "2027-03-20", address: "愛知県名古屋市中区栄1丁目17-6" },
+    ],
+    notes: "團編:27JY315CIK-K"
   }
 ];
 
