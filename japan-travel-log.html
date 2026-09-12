@@ -243,8 +243,8 @@ const tripRecords = [
     title: "關西遇到愛～三都京阪神、日式和服體驗、華麗夜晚餐、米其林三星景點五日",
     startDate: "2023-03-12",
     endDate: "2023-03-16",
-    prefectures: ["Osaka","Gifu","Ishikawa", "Toyama","Nagano","Mie"],
-    cities: { Osaka: ["大阪市", "箕面市"], Gifu: ["大野郡", "高山市"], Ishikawa:["金澤市"], Toyama:["新川郡"], Nagano:["大町市", "松本市",], Mie:["桑名市"] },
+    prefectures: ["Osaka", "Nara", "Shiga", "Kyoto", "Hyogo"],
+    cities: { Osaka: ["大阪市", "箕面市"], Nara: ["奈良市"], Kyoto:["京都市"], Shiga:["大津市"], Hyogo:["神戶市"] },
     agency: "可樂旅遊",
     price: 36700,
     itinerary: [
@@ -271,13 +271,13 @@ const tripRecords = [
     startDate: "2024-03-21",
     endDate: "2024-03-26",
     prefectures: ["Hokkaido"],
-    cities: { Hokkaido: [""] },
+    cities: { Hokkaido: ["登別市", "函館市", "七飯町", "壯瞥町", "洞爺湖町", "千歲市", "札榥市", "北廣島市"] },
     agency: "喜鴻假期",
     price: 32452,
     itinerary: [
       { day: 1, title: "桃園 / 新千歲國際機場 ", spots: [] },
       { day: 2, title: "登別地獄谷 / 尼克斯海洋公園 / 函館山", spots: ["百萬夜景"] },
-      { day: 3, title: "大沼國定公園 / 元町異人館街 / 昭和新山 / 壯瞥溫泉", spots: [] },
+      { day: 3, title: "大沼國定公園 / 金森紅磚倉庫群 / 昭和新山 / 壯瞥溫泉", spots: [] },
       { day: 4, title: "羊蹄山 サイロ展望台 / 名水公園 / 小樽運河★加贈Hello Kitty杯", spots: [] },
       { day: 5, title: "北海道神宮 / 白色戀人公園 / 光伸免稅店 / 狸小路商店街", spots: [] },
       { day: 6, title: "二条市場 / 三井OUTLET PARK札榥北廣島 / 新千歲國際機場 / 桃園", spots: [] }
@@ -287,11 +287,11 @@ const tripRecords = [
       return:    { airline: "酷航空", flightNo: "TR893", airport: "新千歲國際機場", date: "2024-03-26", time: "17:30", arriveTime: "21:00" }
     },
     hotels: [
-      { name: "定山溪 萬世閣", checkIn: "2024-03-21", checkOut: "2024-03-21", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
-      { name: "函館 GreenPia 大沼飯店", checkIn: "2024-03-21", checkOut: "2024-03-21", address: "石川県金沢市下堤町10" },
-      { name: "洞爺湖 畔亭", checkIn: "2024-03-21", checkOut: "2024-03-21", address: "長野県安曇野市堀金烏川11－1" },
-      { name: "小樽 Grand park 酒店", checkIn: "2024-03-21", checkOut: "2024-03-21", address: "愛知県名古屋市中区栄1丁目17-6" },
-      { name: "札幌 Premier Hotel 中島公園", checkIn: "2024-03-21", checkOut: "2024-03-21", address: "愛知県名古屋市中区栄1丁目17-6" }
+      { name: "定山溪 萬世閣飯店", checkIn: "2024-03-21", checkOut: "2024-03-22", address: "北海道札幌市南区定山渓温泉東3丁目" },
+      { name: "函館 GreenPia 大沼飯店", checkIn: "2024-03-22", checkOut: "2024-03-23", address: "北海道茅部郡森町赤井川229" },
+      { name: "洞爺湖 畔亭", checkIn: "2024-03-23", checkOut: "2024-03-24", address: "北海道虻田郡洞爺湖町洞爺湖温泉7-8" },
+      { name: "小樽 Grand park 酒店", checkIn: "2024-03-24", checkOut: "2024-03-25", address: "北海道小樽市築港11-3" },
+      { name: "札幌 Premier Hotel 中島公園", checkIn: "2024-03-25", checkOut: "2024-03-26", address: "北海道札幌市中央区南10条西6丁目1-21" }
     ],
     notes: "團編:SPK06TR240321TA"
   },
@@ -360,16 +360,16 @@ const tripRecords = [
     agency: "雄獅旅遊",
     price: 39400,
     itinerary: [
-      { day: 1, title: "高雄 / 高松國際機場 / 名古屋市區", spots: [] },
-      { day: 2, title: "白川鄉合掌村 / 金澤兼六園 ★贈送金箔冰淇淋", spots: [] },
-      { day: 3, title: "黑部立山體驗六種交通方式", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
-      { day: 4, title: "上高地 / 高山老街 ★贈送飛驒牛肉串 / 光伸免稅店 / 名古屋市區", spots: [] },
-      { day: 5, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 中部國際機場 / 桃園", spots: [] },
-      { day: 6, title: "名古屋城 / 三井OUTLET PARK 爵士之夢長島 / 高松國際機場 / 桃園", spots: [] }
+      { day: 1, title: "高雄 / 高松國際機場 ", spots: ["觀光果園採果趣", "倉敷美觀地區"] },
+      { day: 2, title: "岡山後樂園 / 尾道千光寺 / 和平紀念公園 / 廣島原爆遺址", spots: [] },
+      { day: 3, title: "嚴島神社 / 瀨戶內海〈島波海道〉 / 道後溫泉街散策 / 少爺音樂鐘", spots: ["立山車站", "美女平", "室堂", "大觀峰", "黑部平", "黑部水壩", "扇澤車站"] },
+      { day: 4, title: "松山城 / 歧烏龍麵DIY實作體驗 / 光伸免稅店 / 金刀比羅宮", spots: [] },
+      { day: 5, title: "大步危峽遊覽船 / 栗林公園 / 高松中央商店街自由活動", spots: [] },
+      { day: 6, title: "高松國際機場 / 桃園", spots: [] }
     ],
     flights: {
-      departure: { airline: "中華航空", flightNo: "JX838", airport: "高雄國際機場", date: "2027-03-15", time: "14:55", arriveTime: "18:45" },
-      return:    { airline: "中華航空", flightNo: "JX839", airport: "高松機場", date: "2027-03-20", time: "19:55", arriveTime: "22:00" }
+      departure: { airline: "中華航空", flightNo: "CI7760", airport: "高雄國際機場", date: "2027-03-15", time: "06:55", arriveTime: "10:35" },
+      return:    { airline: "中華航空", flightNo: "CI7760", airport: "高松機場", date: "2027-03-20", time: "11:35", arriveTime: "14:05" }
     },
     hotels: [
       { name: "名古屋榮最佳西方Plus酒店Best Western Hotel Nagoya sakae", checkIn: "2027-03-15", checkOut: "2027-03-16", address: "愛知県名古屋市中区栄4丁目6-1052-228-1711" },
